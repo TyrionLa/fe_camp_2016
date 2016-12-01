@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PPPP</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100%;
+            background-image: url("../images/背景1.jpg");
+        }
+        .img-box{
+            width:120px;height:100px;border:4px;   float:left;
+        }
+        .button{
+            width:120px;height:100px;border:4px; float:left;clear:none;margin-left:350px;
+            margin-right:100px;margin-top: 180px;
+        }
+        .all-box{
+            height: 450px;
+            width: 700px;
+            padding-left: 200px;
+            margin-top: 200px;
+            margin-left: 150px;
+            margin-right:0;
+        }
+        .button1 button {
+            width: 200px;
+            height: 40px;
+            border: 1px solid #89cbdb;
+            background-image: url("../images/蓝.jpg");
+            border-radius: 5px;
+            font-size: 28px;
+            margin: 0 15px;
+            color: #4c8bf5;
+            outline: none;}
+        .button1 button:hover {
+            background-color: #ddd;
+            color: #3070e0;
+        }
+        .button2 button {
+            width: 200px;
+            height: 40px;
+            border: 1px solid #89cbdb;
+            background-image: url("../images/黑.jpg");
+            border-radius: 5px;
+            font-size: 28px;
+            margin: 0 15px;
+            color: #4c8bf5;
+            outline: none;}
+        .button2{
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="all-box">
+    <div class="img-box">
+        <img id="img" src="../images/巴卫.png">
+        </div>
+    <div class="button">
+    <div class="button1">
+    <button id="巴卫" >巴卫</button>
+    </div>
+    <div class="button2">
+    <button id="小新" >小新</button>
+    </div>
+        </div>
+    </div>
+<script>
+    var btn1=document.getElementById("巴卫");
+    var btn2=document.getElementById("小新");
+    var img1=document.getElementById("img");
+
+    function Switchpic(id) {
+        img1.setAttribute("src", "../images/" + id + ".png")
+    }
+    function  S1(){
+            if (btn1.style.backgroundImage == 'url("../images/黑.jpg")') {
+                btn1.style.backgroundImage = 'url("../images/蓝.jpg")';
+            }
+
+            if(btn2.style.backgroundImage=='url("../images/蓝.jpg")')
+            {
+                btn2.style.backgroundImage='url("../images/黑.jpg")';
+            }
+
+    }
+    function  S2(){
+        if (btn2.style.backgroundImage !='url("../images/蓝.jpg")')
+        {
+            btn2.style.backgroundImage ='url("../images/蓝.jpg")';
+        }
+        if(btn1.style.backgroundImage!='url("../images/黑.jpg")')
+        {
+            btn1.style.backgroundImage='url("../images/黑.jpg")';
+        }
+    }
+    btn1.onclick=function(){
+        S1();
+        Switchpic("巴卫");
+        document.body.style.background = 'url("../images/背景1.jpg")';
+    }
+    btn2.onclick=function(){
+        S2();
+        Switchpic("小新");
+        document.body.style.background = 'url("../images/背景2.jpg")';
+    }
+</script>
+</body>
+</html>
